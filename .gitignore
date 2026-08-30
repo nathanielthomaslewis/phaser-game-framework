@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.godot/
+.import/
+export_presets.cfg
+ios/
+android/
+.idea/
+.vscode/
+*.local
+.env
+coverage/
+.cache/

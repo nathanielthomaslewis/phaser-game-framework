@@ -4,6 +4,7 @@ export const theme = {
   panelAlpha: 0.92,
   accent: 0xf4c542,
   danger: 0xe85d4c,
+  obstacle: 0x3f8f6b,
   text: "#f4f1ea",
   muted: "#9aa3b5",
   fontFamily: "Georgia, 'Times New Roman', serif",

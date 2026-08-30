@@ -19,8 +19,16 @@ export function createGameOver(scene: Phaser.Scene, onRetry: () => void) {
       color: theme.muted,
     })
     .setOrigin(0.5);
+  const newBest = scene.add
+    .text(width / 2, height / 2 + 38, "NEW BEST!", {
+      fontFamily: theme.fontFamily,
+      fontSize: "20px",
+      color: "#f4c542",
+    })
+    .setOrigin(0.5)
+    .setVisible(false);
   const retry = scene.add
-    .text(width / 2, height / 2 + 64, "retry", {
+    .text(width / 2, height / 2 + 84, "retry", {
       fontFamily: theme.fontFamily,
       fontSize: "28px",
       color: "#0e1116",
@@ -31,12 +39,13 @@ export function createGameOver(scene: Phaser.Scene, onRetry: () => void) {
     .setInteractive({ useHandCursor: true });
 
   retry.on("pointerup", onRetry);
-  root.add([dim, title, score, retry]);
+  root.add([dim, title, score, newBest, retry]);
   root.setVisible(false);
 
   return {
-    show: (n: number) => {
+    show: (n: number, isNewBest = false) => {
       score.setText(`score ${n}`);
+      newBest.setVisible(isNewBest);
       root.setVisible(true);
     },
     hide: () => root.setVisible(false),

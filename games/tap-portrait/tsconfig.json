@@ -6,7 +6,11 @@
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "lib": ["ES2022", "DOM"]
+    "lib": ["ES2022", "DOM"],
+    "baseUrl": ".",
+    "paths": {
+      "@ui": ["../../shared/ui"]
+    }
   },
   "include": ["src", "../../shared"]
 }
